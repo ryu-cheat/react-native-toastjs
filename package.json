@@ -1,0 +1,39 @@
+{
+  "name": "react-native-toastjs",
+  "version": "0.0.1",
+  "main": "toast.js",
+  "keywords": [
+    "react-native",
+    "react-native-toast",
+    "popup",
+    "modal",
+    "notification",
+    "react-native-toastify",
+    "react-native-toastjs",
+    "rn-toastjs",
+    "custom",
+    "alert",
+    "toast",
+    "react",
+    "message"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "description": "React-Native Best Toast Message",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-native": "^0.60.3"
+  },
+  "homepage": "https://github.com/lingobong/react-native-toastjs",
+  "author": {
+    "name": "JaeWan, Ryu",
+    "email": "rwh9969@gmail.com",
+    "url": "https://github.com/lingobong/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lingobong/react-native-toastjs.git"
+  }
+}

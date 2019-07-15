@@ -9,6 +9,7 @@ import {
 
 interface ToastOption{
     animation(animationValue_0to1: Animated): ViewStyle;
+    position: 'top' | 'bottom'
 }
 
 interface ShowOptions{
@@ -39,7 +40,6 @@ const _CustomToast = (view, option): ToastInterface => {
 export const CustomToast = (view: React.ReactNode, option:ToastOption = {}): ToastInterface => _CustomToast(view, option)
 export const Toast = (text, option:ToastOption = {}): ToastInterface => _CustomToast(<DefaultToast text={text} />, option)
 
-
 export default class ToastProvider extends React.Component{
     render(){
         return (<View style={style.toastProvider}>
@@ -67,9 +67,13 @@ class ToastWrapper extends React.Component{
         if (!toastOption.animation) {
             toastOption.animation = () => ({})
         }
+        if (!toastOption.position) {
+            toastOption.position = 'bottom'
+        }
 
+        let position = ({ top: style.toastTop, bottom: style.toastBottom })[toastOption.position]
         let view = (
-            <Animated.View key={this.views.length} style={[style.toastBottom, { opacity: animationValue }, toastOption.animation(animationValue)]}>
+            <Animated.View key={this.views.length} style={[position, { opacity: animationValue }, toastOption.animation(animationValue)]}>
                 {_view}
             </Animated.View>
         )
